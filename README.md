@@ -17,5 +17,4 @@ Code Running steps:
     uvicorn codeAPI:app --reload
 2. Now in the integrated terminal run- python app.py
 
-
-  
+NOTE: You need to create a .env file that will store the OPENAI_API credentials
