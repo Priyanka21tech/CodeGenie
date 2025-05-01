@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Code Assistant</h1>
+        <form method="POST">
+            <label for="input_text">Enter Code:</label>
+            <textarea name="input_text" rows="5" required></textarea>
+
+            <label for="task">Choose Task:</label>
+            <select name="task">
+                <option value="explain">Explain Code</option>
+                <option value="generate">Generate Code</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if response_text %}
+        <h2>Response:</h2>
+        <div class="response-box">
+            <pre><code>{{ response_text | safe }}</code></pre>  <!-- Ensures HTML is properly rendered -->
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
